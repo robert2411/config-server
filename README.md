@@ -23,3 +23,7 @@
 ### V0.1.0
 #### Features
  - First draft of the config-server, there is only 1 config propertie for now !!
+ 
+## Release info
+install libxml2 (sudo apt  install libxml2-utils)
+run start-release.sh
