@@ -31,5 +31,8 @@ spring:
     name: config-server
   cloud:
     config:
+      server:
+        native:
+          searchLocations: ${SEARCH_LOCATIONS}
       discovery:
         enabled: ${CONFIG_DISCOVERY_ENABLED:false}
