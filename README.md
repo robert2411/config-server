@@ -6,7 +6,9 @@
 
 | Variable                    | Default value         | Options    | Description                                                                           |
 | --------------------------- |:----------------------| -----------|---------------------------------------------------------------------------------------|
+| EUREKA_CLIENT_ENABLED       | true                  | true/false | Find other applications using eureka                                                  |
 | EUREKA_SERVICE_URL          | http://localhost:8761 |            | /euraka is added to the url by default                                                |
+| CONFIG_DISCOVERY_ENABLED    | false                 | true/false | Find the config server using eurkea?                                                  |
 
 ## Tags
 ### latest
@@ -20,10 +22,13 @@
 
 ## Release Notes
 
+### V0.2.0
+#### Features
+ - Added eureka properties
+
 ### V0.1.0
 #### Features
- - First draft of the config-server, there is only 1 config propertie for now !!
+ - First draft of the config-server, there is only 1 config property for now !!
  
 ## Release info
-install libxml2 (sudo apt  install libxml2-utils)
 run start-release.sh
