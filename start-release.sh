@@ -97,7 +97,7 @@ echo "To continue type y"
 
 read CONTINUE
 
-if [[ "${CONTINUE}" ! "y" ]]
+if [[ ! "${CONTINUE}" = "y" ]]
 then
     echo "Stopping"
     exit 1;
