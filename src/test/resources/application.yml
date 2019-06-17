@@ -33,6 +33,6 @@ spring:
     config:
       server:
         native:
-          searchLocations: ${SEARCH_LOCATIONS:"[classpath:/, classpath:/config, file:./, file:./config, file:/config]"}
+          searchLocations: ${SEARCH_LOCATIONS:"[classpath:/, classpath:/config, file:./, file:./config]"}
       discovery:
         enabled: ${CONFIG_DISCOVERY_ENABLED:false}
