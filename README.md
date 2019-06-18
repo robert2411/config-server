@@ -6,9 +6,13 @@
 
 | Variable                    | Default value         | Options    | Description                                                                           |
 | --------------------------- |:----------------------| -----------|---------------------------------------------------------------------------------------|
-| EUREKA_CLIENT_ENABLED       | true                  | true/false | Find other applications using eureka                                                  |
+| EUREKA_CLIENT_ENABLED       | false                 | true/false | Find other applications using eureka                                                  |
 | EUREKA_SERVICE_URL          | http://localhost:8761 |            | /euraka is added to the url by default                                                |
 | CONFIG_DISCOVERY_ENABLED    | false                 | true/false | Find the config server using eurkea?                                                  |
+| SEARCH_LOCATIONS            |[classpath:/, classpath:/config, file:./, file:./config, file:/config] | | |
+
+## Description
+To use local files use the following env variable `SPRING_PROFILES_ACTIVE=native`
 
 ## Tags
 ### latest
@@ -21,6 +25,10 @@
  - A specific version (Tag on git)
 
 ## Release Notes
+
+### V0.3.0
+#### Features
+ - Added the possibility to configure local files
 
 ### V0.2.0
 #### Features
