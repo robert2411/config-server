@@ -1,0 +1,6 @@
+Dockerfile
+package.json
+README.md
+LICENSE
+.dockerignore
+.gitignore
