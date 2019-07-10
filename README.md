@@ -40,3 +40,6 @@ To use local files use the following env variable `SPRING_PROFILES_ACTIVE=native
  
 ## Release info
 run start-release.sh
+
+## Running ITest
+docker-compose -f ~/hello_world/docker-compose.test.yml -p ci up -d && docker wait ci_sut_1 -> code 0 means that there are no errors
