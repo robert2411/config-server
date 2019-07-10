@@ -1,6 +1,9 @@
-FROM golang:1.9.2 as healthCheckBuilder
-RUN cd src && git clone https://github.com/Soluto/golang-docker-healthcheck-example.git health
-RUN cd src/health && go get ./healthcheck
+FROM golang:1.12 as healthCheckBuilder
+
+WORKDIR /go/src/app
+COPY ./healthcheck cmd/healthcheck
+RUN ls
+RUN go install -v ./...
 
 FROM debian:stable AS parent_downloader
 ENV DEBIAN_FRONTEND noninteractive
@@ -29,11 +32,13 @@ RUN mvn clean package
 FROM gcr.io/distroless/java:11 AS config-server
 MAINTAINER robert@stevens.tk
 EXPOSE 8080
-HEALTHCHECK \
-  --interval=5m \
-  --timeout=3s \
-  CMD ["/healthcheck","http://localhost:8080/actuator/info"]
+
 COPY --from=healthCheckBuilder /go/bin/healthcheck /
+
+HEALTHCHECK \
+  --interval=10s \
+  --timeout=3s \
+  CMD [ "/healthcheck"]
 COPY --from=builder /project/target/config-server.jar /app/config-server.jar
 WORKDIR /app
 CMD ["config-server.jar"]

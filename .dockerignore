@@ -4,3 +4,5 @@ README.md
 LICENSE
 .dockerignore
 .gitignore
+docker-compose.test.yml
+Dockerfile.test

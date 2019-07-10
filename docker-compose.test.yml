@@ -1,0 +1,10 @@
+sut:
+  build: .
+  dockerfile: Dockerfile.test
+  links:
+    - config-server
+config-server:
+  build: .
+  dockerfile: Dockerfile
+  environment:
+    - "SPRING_PROFILES_ACTIVE=native"
